@@ -56,7 +56,7 @@ export default function SASSmartPlantLandingPage() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="http://localhost:8505"
+                  href="https://sas-smartplant-nfhbmqb39yeacmngdyan4i.streamlit.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-2xl bg-sky-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:bg-sky-400"
