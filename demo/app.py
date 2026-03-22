@@ -32,19 +32,22 @@ body {
     max-width: 95rem;
 }
 
-/* ===== Títulos ===== */
+/* ===== Título ===== */
 .sas-title {
     font-size: 2.2rem;
     font-weight: 700;
     color: #f8fafc;
     margin-bottom: 0.15rem;
     letter-spacing: -0.02em;
+    line-height: 1.1;
+    word-break: break-word;
 }
 
 .sas-sub {
     color: #cbd5e1;
     margin-bottom: 1.2rem;
     font-size: 1.02rem;
+    line-height: 1.6;
 }
 
 /* ===== Texto general ===== */
@@ -60,7 +63,7 @@ p, div, span, label {
 [data-testid="stMetric"] {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(148, 163, 184, 0.12);
-    border-radius: 16px;
+    border-radius: 18px;
     padding: 16px 18px;
 }
 
@@ -74,8 +77,33 @@ p, div, span, label {
     font-weight: 700 !important;
 }
 
+/* Delta / porcentajes */
 [data-testid="stMetricDelta"] {
-    font-weight: 600 !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    border-radius: 999px;
+    padding: 4px 10px;
+    display: inline-flex;
+    width: fit-content;
+}
+
+/* Positivo */
+[data-testid="stMetricDelta"] svg[aria-label="arrow-up"] + div,
+[data-testid="stMetricDelta"]:has(svg[aria-label="arrow-up"]) {
+    color: #6ee7b7 !important;
+    background-color: rgba(15, 118, 110, 0.22) !important;
+}
+
+/* Negativo */
+[data-testid="stMetricDelta"]:has(svg[aria-label="arrow-down"]) {
+    color: #fca5a5 !important;
+    background-color: rgba(127, 29, 29, 0.22) !important;
+}
+
+/* Compatibilidad cuando :has no aplique bien */
+[data-testid="stMetricDelta"] {
+    background-color: rgba(15, 118, 110, 0.22) !important;
+    color: #6ee7b7 !important;
 }
 
 /* ===== Tabs ===== */
@@ -139,6 +167,12 @@ div[data-testid="stAlert"] {
     border-radius: 12px !important;
 }
 
+/* ===== Gráficas ===== */
+.js-plotly-plot, .plotly, .plot-container {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+}
+
 /* ===== Líneas divisorias ===== */
 hr {
     border-color: rgba(148, 163, 184, 0.15) !important;
@@ -152,21 +186,37 @@ hr {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .sas-title {
-        font-size: 1.8rem;
+        font-size: 1.55rem;
+        line-height: 1.2;
+        margin-top: 0.2rem;
     }
 
     .sas-sub {
         font-size: 0.95rem;
-        line-height: 1.5;
+        line-height: 1.6;
     }
 
     [data-testid="stMetric"] {
-        padding: 12px 14px;
+        padding: 16px 16px;
+        border-radius: 20px;
+    }
+
+    [data-testid="stMetricValue"] {
+        font-size: 2.1rem !important;
+    }
+
+    [data-testid="stMetricLabel"] {
+        font-size: 1rem !important;
+    }
+
+    [data-testid="stMetricDelta"] {
+        font-size: 0.95rem !important;
     }
 }
 </style>
 """, unsafe_allow_html=True)
 
+# ===== Data demo =====
 diesel_flow = pd.DataFrame({
     "Etapa": ["Recepción P2", "Despacho Hyundai", "Distribución Equipos", "Diferencia"],
     "Valor": [10000, 8500, 8200, 300]
@@ -189,12 +239,14 @@ equipos = pd.DataFrame({
     "Galones": [1200, 1600, 1450, 220, 180]
 })
 
+# ===== Header =====
 st.markdown('<div class="sas-title">SAS SmartPlant</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="sas-sub">Demo visual para plantas de asfalto • Control de diésel, AC30, producción y alertas inteligentes</div>',
     unsafe_allow_html=True
 )
 
+# ===== KPIs =====
 col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric("Producción", "1,734 ton", "+9.1%")
 col2.metric("Diésel", "4,700 gal", "+14.8%")
@@ -204,6 +256,7 @@ col5.metric("Alertas activas", "3", "+2")
 
 st.divider()
 
+# ===== Tabs =====
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "Resumen Ejecutivo",
     "Control de Diésel",
@@ -253,6 +306,7 @@ with tab1:
 
     with right:
         st.subheader("Estado operativo")
+
         st.markdown(
             '<div class="alert-red"><b>Alerta roja:</b> La diferencia entre despacho Hyundai y distribución a equipos es de 300 gal.</div>',
             unsafe_allow_html=True
@@ -370,6 +424,7 @@ with tab4:
 
 with tab5:
     st.subheader("Panel de alertas inteligentes")
+
     st.markdown(
         '<div class="alert-red"><b>1. Sobreconsumo de diésel</b><br>El consumo por tonelada subió a 2.71 vs meta de 1.80.</div>',
         unsafe_allow_html=True
