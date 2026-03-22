@@ -2,7 +2,53 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+st.set_page_config(
+    page_title="SAS SmartPlant Demo",
+    layout="wide"
+)
+st.markdown("""
+<style>
+body {
+    background-color: #0f172a;
+    color: white;
+}
 
+.stApp {
+    background-color: #0f172a;
+}
+
+/* Títulos */
+h1, h2, h3, h4 {
+    color: #ffffff !important;
+}
+
+/* Texto normal */
+p, div, span {
+    color: #cbd5e1 !important;
+}
+
+/* Métricas */
+[data-testid="stMetricValue"] {
+    color: #ffffff !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #94a3b8 !important;
+}
+
+/* Cards */
+.block-container {
+    padding-top: 1rem;
+}
+
+/* Alertas */
+div[data-testid="stAlert"] {
+    background-color: #1e293b !important;
+    color: white !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
 st.set_page_config(page_title="SAS SmartPlant Demo", page_icon="🏭", layout="wide")
 
 st.markdown("""
