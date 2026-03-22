@@ -27,7 +27,7 @@ body {
 
 /* ===== Contenedor principal ===== */
 .block-container {
-    padding-top: 1.2rem;
+    padding-top: 3.8rem;
     padding-bottom: 1rem;
     max-width: 95rem;
 }
