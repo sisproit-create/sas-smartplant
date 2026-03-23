@@ -33,8 +33,13 @@ div[data-testid="stToolbar"] {
     right: 0.5rem;
 }
 
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
 
 .block-container {
     padding-top: 3.8rem;
@@ -275,13 +280,27 @@ with tab1:
 
     with right:
         st.subheader("Estado operativo")
-        st.markdown('<div class="alert-red"><b>Alerta roja:</b> La diferencia entre despacho Hyundai y distribución a equipos es de 300 gal.</div>', unsafe_allow_html=True)
-        st.markdown('<div class="alert-yellow"><b>Alerta amarilla:</b> El consumo de diésel por tonelada está 18% por encima del promedio de los últimos 7 días.</div>', unsafe_allow_html=True)
-        st.markdown('<div class="alert-yellow"><b>AC30:</b> Se detecta una diferencia de -500 kg frente al inventario esperado.</div>', unsafe_allow_html=True)
-        st.markdown('<div class="alert-green"><b>Producción:</b> La planta operó con 1,734 ton en el día y mantuvo continuidad de despacho.</div>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="alert-red"><b>Alerta roja:</b> La diferencia entre despacho Hyundai y distribución a equipos es de 300 gal.</div>',
+            unsafe_allow_html=True
+        )
+        st.markdown(
+            '<div class="alert-yellow"><b>Alerta amarilla:</b> El consumo de diésel por tonelada está 18% por encima del promedio de los últimos 7 días.</div>',
+            unsafe_allow_html=True
+        )
+        st.markdown(
+            '<div class="alert-yellow"><b>AC30:</b> Se detecta una diferencia de -500 kg frente al inventario esperado.</div>',
+            unsafe_allow_html=True
+        )
+        st.markdown(
+            '<div class="alert-green"><b>Producción:</b> La planta operó con 1,734 ton en el día y mantuvo continuidad de despacho.</div>',
+            unsafe_allow_html=True
+        )
 
         st.subheader("Recomendación del sistema")
-        st.info("Revisar humedad de agregados, tiempos muertos, temperatura de operación y conciliación del flujo P2 → Hyundai → Equipos antes del cierre diario.")
+        st.info(
+            "Revisar humedad de agregados, tiempos muertos, temperatura de operación y conciliación del flujo P2 → Hyundai → Equipos antes del cierre diario."
+        )
 
 with tab2:
     c1, c2 = st.columns([1, 1])
@@ -378,9 +397,18 @@ with tab4:
 
 with tab5:
     st.subheader("Panel de alertas inteligentes")
-    st.markdown('<div class="alert-red"><b>1. Sobreconsumo de diésel</b><br>El consumo por tonelada subió a 2.71 vs meta de 1.80.</div>', unsafe_allow_html=True)
-    st.markdown('<div class="alert-red"><b>2. Diferencia en flujo de combustible</b><br>La suma distribuida a equipos no cuadra con el despacho al Hyundai.</div>', unsafe_allow_html=True)
-    st.markdown('<div class="alert-yellow"><b>3. AC30 fuera de balance</b><br>El inventario final real no coincide con el estimado teórico.</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="alert-red"><b>1. Sobreconsumo de diésel</b><br>El consumo por tonelada subió a 2.71 vs meta de 1.80.</div>',
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        '<div class="alert-red"><b>2. Diferencia en flujo de combustible</b><br>La suma distribuida a equipos no cuadra con el despacho al Hyundai.</div>',
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        '<div class="alert-yellow"><b>3. AC30 fuera de balance</b><br>El inventario final real no coincide con el estimado teórico.</div>',
+        unsafe_allow_html=True
+    )
 
     st.subheader("Acciones sugeridas por SAS SmartPlant")
     st.write("1. Revisar registro físico del despacho a Hyundai.")
