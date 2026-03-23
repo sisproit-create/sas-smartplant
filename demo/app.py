@@ -194,14 +194,17 @@ hr {
 </style>
 """, unsafe_allow_html=True)
 
+# =========================
+# DATA DEMO
+# =========================
 diesel_flow = pd.DataFrame({
     "Etapa": ["Recepción P2", "Despacho Hyundai", "Distribución Equipos", "Diferencia"],
     "Valor": [10000, 8500, 8200, 300]
 })
 
 ac30_data = pd.DataFrame({
-    "Concepto": ["Inventario inicial", "Recepción", "Consumo", "Inventario final"],
-    "Kg": [60000, 20000, 52000, 28000]
+    "Concepto": ["Inventario inicial", "Recepción", "Consumo", "Inventario final", "Diferencia teórica vs real"],
+    "Kg": [60000, 20000, 52000, 28000, -500]
 })
 
 prod_history = pd.DataFrame({
@@ -216,45 +219,81 @@ equipos = pd.DataFrame({
     "Galones": [1200, 1600, 1450, 220, 180]
 })
 
+mezclas = pd.DataFrame({
+    "Tipo de mezcla": ["IV-B", "MS-22", "Base", "Binder"],
+    "Toneladas": [800, 500, 250, 184]
+})
+
+calidad_data = pd.DataFrame({
+    "Parámetro": ["Contenido de asfalto %", "Densidad", "Vacíos", "Estabilidad", "Flujo"],
+    "Diseño": [5.5, 2.35, 4.0, 1200, 3.5],
+    "Real": [5.8, 2.30, 4.8, 1100, 3.9],
+    "Cumplimiento": ["⚠️ Parcial", "❌ No cumple", "⚠️ Parcial", "❌ No cumple", "⚠️ Parcial"]
+})
+
+resumen_combustible = pd.DataFrame({
+    "Indicador": [
+        "Nivel P2 estimado",
+        "Despacho Hyundai",
+        "Distribución total a equipos",
+        "Diferencia detectada",
+        "Consumo diésel / ton"
+    ],
+    "Valor": ["1,500 gal", "8,500 gal", "8,200 gal", "300 gal", "2.71 gal/ton"]
+})
+
+# =========================
+# HEADER
+# =========================
 st.markdown('<div class="sas-title">SAS SmartPlant</div>', unsafe_allow_html=True)
 st.markdown(
-    '<div class="sas-sub">Control inteligente de diésel, AC30, producción y alertas en tiempo real</div>',
+    '<div class="sas-sub">Control inteligente de diésel, AC30, producción, calidad y alertas en tiempo real</div>',
     unsafe_allow_html=True
 )
 
+# =========================
+# KPI TOP
+# =========================
 col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric("Producción", "1,734 ton", "+9.1%")
 col2.metric("Diésel", "4,700 gal", "+14.8%")
 col3.metric("AC30", "52,000 kg", "-500 kg")
 col4.metric("Costo diésel / ton", "2.71", "+0.95")
-col5.metric("Alertas", "3", "+2")
+col5.metric("Alertas activas", "3", "+2")
 
 st.divider()
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+# =========================
+# TABS
+# =========================
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "Resumen Ejecutivo",
-    "Diésel",
+    "Combustible",
     "AC30",
     "Producción",
-    "Alertas"
+    "Calidad",
+    "Alertas Inteligentes"
 ])
 
+# =========================
+# TAB 1 - RESUMEN
+# =========================
 with tab1:
     left, right = st.columns([1.3, 1])
 
     with left:
-        st.subheader("KPIs clave del día")
+        st.subheader("Resumen del día")
 
         fig = px.line(
             prod_history,
             x="Fecha",
             y="Toneladas",
             markers=True,
-            title="Toneladas producidas (7 días)"
+            title="Toneladas producidas por día"
         )
         fig.update_layout(
             template="plotly_white",
-            height=330,
+            height=320,
             margin=dict(l=10, r=10, t=50, b=10),
             paper_bgcolor="#f8fafc",
             plot_bgcolor="#f8fafc",
@@ -266,11 +305,11 @@ with tab1:
             equipos,
             x="Equipo",
             y="Galones",
-            title="Distribución de diésel por equipo"
+            title="Equipos abastecidos y distribución de diésel"
         )
         fig2.update_layout(
             template="plotly_white",
-            height=330,
+            height=320,
             margin=dict(l=10, r=10, t=50, b=10),
             paper_bgcolor="#f8fafc",
             plot_bgcolor="#f8fafc",
@@ -297,21 +336,25 @@ with tab1:
             unsafe_allow_html=True
         )
 
-        st.subheader("Recomendación del sistema")
+        st.subheader("Insight automático")
         st.info(
-            "Revisar humedad de agregados, tiempos muertos, temperatura de operación y conciliación del flujo P2 → Hyundai → Equipos antes del cierre diario."
+            "El sistema detecta que el aumento del consumo de diésel está asociado a una mayor producción, "
+            "posibles tiempos muertos y diferencias en el flujo P2 → Hyundai → Equipos."
         )
 
+# =========================
+# TAB 2 - COMBUSTIBLE
+# =========================
 with tab2:
     c1, c2 = st.columns([1, 1])
 
     with c1:
-        st.subheader("Flujo de diésel")
+        st.subheader("Combustible")
         fig = px.funnel(
             diesel_flow,
             x="Valor",
             y="Etapa",
-            title="P2 → Hyundai → Equipos"
+            title="Flujo P2 → Hyundai → Equipos"
         )
         fig.update_layout(
             template="plotly_white",
@@ -323,26 +366,46 @@ with tab2:
         )
         st.plotly_chart(fig, use_container_width=True)
 
-    with c2:
-        st.subheader("Conciliación")
-        st.dataframe(diesel_flow, use_container_width=True, hide_index=True)
-        st.write("**Validación automática**")
-        st.write("- Recepción P2: 10,000 gal")
-        st.write("- Despacho a Hyundai: 8,500 gal")
-        st.write("- Distribución a equipos: 8,200 gal")
-        st.write("- Diferencia detectada: 300 gal")
-        st.error("Estado: ALERTA ROJA")
+        fig_eq = px.bar(
+            equipos,
+            x="Equipo",
+            y="Galones",
+            title="Distribución por equipo"
+        )
+        fig_eq.update_layout(
+            template="plotly_white",
+            height=320,
+            margin=dict(l=10, r=10, t=50, b=10),
+            paper_bgcolor="#f8fafc",
+            plot_bgcolor="#f8fafc",
+            font=dict(color="#111827")
+        )
+        st.plotly_chart(fig_eq, use_container_width=True)
 
+    with c2:
+        st.subheader("Resumen de combustible")
+        st.dataframe(resumen_combustible, use_container_width=True, hide_index=True)
+        st.write("**Lectura automática**")
+        st.write("- Nivel P2 estimado: 1,500 gal")
+        st.write("- Despacho Hyundai: 8,500 gal")
+        st.write("- Distribución total: 8,200 gal")
+        st.write("- Diferencia detectada: 300 gal")
+        st.write("- Consumo por tonelada: 2.71 gal/ton")
+        st.error("Desbalance detectado entre despacho y distribución")
+
+# =========================
+# TAB 3 - AC30
+# =========================
 with tab3:
     c1, c2 = st.columns([1, 1])
 
     with c1:
-        st.subheader("Balance AC30")
+        st.subheader("AC30")
         fig = px.bar(
             ac30_data,
             x="Concepto",
             y="Kg",
-            title="Inventario y consumo AC30"
+            title="Inventario, recepciones, consumo y diferencia"
         )
         fig.update_layout(
             template="plotly_white",
@@ -357,28 +420,32 @@ with tab3:
     with c2:
         st.subheader("Resumen AC30")
         st.dataframe(ac30_data, use_container_width=True, hide_index=True)
-        st.write("**Lectura inteligente**")
+        st.write("**Interpretación**")
         st.write("- Inventario inicial: 60,000 kg")
-        st.write("- Recepción: 20,000 kg")
-        st.write("- Consumo: 52,000 kg")
+        st.write("- Recepciones: 20,000 kg")
+        st.write("- Consumo por producción: 52,000 kg")
         st.write("- Inventario final: 28,000 kg")
-        st.warning("Diferencia estimada: -500 kg")
+        st.warning("Diferencia teórica vs real: -500 kg")
+        st.warning("Posible sobreconsumo o desbalance de inventario")
 
+# =========================
+# TAB 4 - PRODUCCIÓN
+# =========================
 with tab4:
     c1, c2 = st.columns([1.2, 1])
 
     with c1:
-        st.subheader("Tendencia operativa")
+        st.subheader("Producción")
         fig = px.line(
             prod_history,
             x="Fecha",
             y="gal_ton",
             markers=True,
-            title="Consumo de diésel por tonelada"
+            title="Eficiencia: consumo de diésel por tonelada"
         )
         fig.update_layout(
             template="plotly_white",
-            height=380,
+            height=360,
             margin=dict(l=10, r=10, t=50, b=10),
             paper_bgcolor="#f8fafc",
             plot_bgcolor="#f8fafc",
@@ -386,27 +453,77 @@ with tab4:
         )
         st.plotly_chart(fig, use_container_width=True)
 
+        fig_mix = px.pie(
+            mezclas,
+            names="Tipo de mezcla",
+            values="Toneladas",
+            title="Producción por tipo de mezcla"
+        )
+        fig_mix.update_layout(
+            template="plotly_white",
+            height=360,
+            margin=dict(l=10, r=10, t=50, b=10),
+            paper_bgcolor="#f8fafc",
+            font=dict(color="#111827")
+        )
+        st.plotly_chart(fig_mix, use_container_width=True)
+
     with c2:
-        st.subheader("Resumen de eficiencia")
-        st.metric("Consumo actual", "2.71 gal/ton")
-        st.metric("Meta operativa", "1.80 gal/ton")
+        st.subheader("Resumen de producción")
+        st.metric("Toneladas producidas", "1,734 ton")
+        st.metric("Costo estimado diésel / ton", "2.71")
+        st.metric("Meta operativa", "1.80")
         st.metric("Desviación", "+50%")
         st.write("**Interpretación**")
-        st.write("El sistema detecta una desviación relevante frente a la meta operativa.")
-        st.write("Se recomienda validar tiempos muertos, humedad del material y temperatura de operación.")
+        st.write("- Producción diaria: 1,734 ton")
+        st.write("- Mezcla dominante: IV-B")
+        st.write("- Eficiencia por debajo de la meta")
+        st.info("Se recomienda revisar tiempos muertos, humedad de agregados y secuencia de despacho.")
 
+# =========================
+# TAB 5 - CALIDAD
+# =========================
 with tab5:
-    st.subheader("Panel de alertas inteligentes")
+    c1, c2 = st.columns([1.1, 1])
+
+    with c1:
+        st.subheader("Control de calidad")
+        st.dataframe(calidad_data, use_container_width=True, hide_index=True)
+
+    with c2:
+        st.subheader("Comparación contra diseño")
+        st.markdown(
+            '<div class="alert-yellow"><b>Desviación:</b> Se detectan variaciones en contenido de asfalto y vacíos.</div>',
+            unsafe_allow_html=True
+        )
+        st.markdown(
+            '<div class="alert-red"><b>No cumplimiento:</b> La estabilidad no cumple con el diseño esperado.</div>',
+            unsafe_allow_html=True
+        )
+        st.markdown(
+            '<div class="alert-green"><b>Acción sugerida:</b> Ajustar mezcla y validar muestreo antes del siguiente lote.</div>',
+            unsafe_allow_html=True
+        )
+
+# =========================
+# TAB 6 - ALERTAS
+# =========================
+with tab6:
+    st.subheader("Alertas inteligentes")
     st.markdown(
-        '<div class="alert-red"><b>1. Sobreconsumo de diésel</b><br>El consumo por tonelada subió a 2.71 vs meta de 1.80.</div>',
+        '<div class="alert-red"><b>1. Desbalance entre despacho y distribución</b><br>La suma distribuida a equipos no cuadra con el despacho al Hyundai.</div>',
         unsafe_allow_html=True
     )
     st.markdown(
-        '<div class="alert-red"><b>2. Diferencia en flujo de combustible</b><br>La suma distribuida a equipos no cuadra con el despacho al Hyundai.</div>',
+        '<div class="alert-yellow"><b>2. Sobreconsumo de AC30</b><br>El inventario final real no coincide con el esperado.</div>',
         unsafe_allow_html=True
     )
     st.markdown(
-        '<div class="alert-yellow"><b>3. AC30 fuera de balance</b><br>El inventario final real no coincide con el estimado teórico.</div>',
+        '<div class="alert-red"><b>3. Incumplimiento de calidad</b><br>Se detectan parámetros fuera de diseño en estabilidad y densidad.</div>',
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        '<div class="alert-yellow"><b>4. Faltante potencial de diésel</b><br>El nivel P2 estimado sugiere necesidad de reposición próxima.</div>',
         unsafe_allow_html=True
     )
 
@@ -414,7 +531,8 @@ with tab5:
     st.write("1. Revisar registro físico del despacho a Hyundai.")
     st.write("2. Confirmar si existe distribución pendiente no registrada.")
     st.write("3. Validar nivel final de AC30 y corregir conciliación.")
-    st.write("4. Revisar causas de sobreconsumo antes de la siguiente jornada.")
+    st.write("4. Revisar mezcla y parámetros de laboratorio.")
+    st.write("5. Programar reposición de diésel antes del siguiente ciclo.")
 
 st.divider()
 st.caption("SAS SmartPlant • Demo para inversionistas")
