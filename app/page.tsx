@@ -32,15 +32,32 @@ export default function SASSmartPlantLandingPage() {
     "Genera alertas y reportes claros",
   ];
 
+  const problemPoints = [
+    "Falta de control en diésel",
+    "Desbalance en AC30",
+    "Errores manuales en producción",
+    "Falta de trazabilidad en calidad",
+    "Reportes tardíos o inexactos",
+  ];
+
+  const solutionPoints = [
+    "Captura datos en tiempo real",
+    "Valida automáticamente la información",
+    "Detecta desviaciones y pérdidas",
+    "Genera alertas inteligentes",
+    "Automatiza reportes",
+    "Optimiza la toma de decisiones",
+  ];
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_30%),radial-gradient(circle_at_left,rgba(16,185,129,0.12),transparent_25%)]" />
         <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 py-16 lg:px-8">
           <div className="grid w-full items-center gap-16 lg:grid-cols-2">
             {/* COLUMNA IZQUIERDA */}
             <div>
-              
               <div className="mb-4 inline-flex items-center rounded-full border border-sky-400/30 bg-sky-400/10 px-3 py-1 text-sm text-sky-300">
                 Inteligencia operativa para plantas de asfalto
               </div>
@@ -172,6 +189,118 @@ export default function SASSmartPlantLandingPage() {
         </div>
       </section>
 
+      {/* PROBLEMA */}
+      <section className="border-b border-white/10 bg-slate-900/60">
+        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="inline-flex rounded-full border border-rose-400/20 bg-rose-500/10 px-3 py-1 text-sm text-rose-300">
+              Problema
+            </div>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Las plantas pierden dinero todos los días sin verlo a tiempo
+            </h2>
+            <p className="mt-4 text-lg text-slate-400">
+              Especialmente en asfalto y construcción, una parte importante de las pérdidas proviene de
+              controles dispersos, conciliaciones tardías y decisiones tomadas con información incompleta.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {problemPoints.map((item) => (
+              <div
+                key={item}
+                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 text-slate-200 shadow-lg shadow-black/20"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            <div className="rounded-3xl border border-rose-400/20 bg-rose-500/10 p-6">
+              <div className="text-sm text-rose-300">Impacto real</div>
+              <div className="mt-2 text-3xl font-bold text-white">$5,000 – $50,000</div>
+              <div className="mt-2 text-slate-300">en pérdidas ocultas mensuales</div>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="text-sm text-slate-400">Consecuencia</div>
+              <div className="mt-2 text-xl font-semibold text-white">Decisiones sin datos confiables</div>
+              <div className="mt-2 text-slate-400">La operación depende de revisiones tardías y conciliaciones manuales.</div>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="text-sm text-slate-400">Resultado</div>
+              <div className="mt-2 text-xl font-semibold text-white">Baja eficiencia operativa</div>
+              <div className="mt-2 text-slate-400">Se pierde tiempo, visibilidad y capacidad de reacción.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VISIÓN */}
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex rounded-full border border-sky-400/20 bg-sky-500/10 px-3 py-1 text-sm text-sky-300">
+            Visión del sistema
+          </div>
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            No solo guarda datos, piensa sobre la operación
+          </h2>
+          <p className="mt-4 text-lg text-slate-400">
+            SAS SmartPlant está diseñado para convertir datos operativos dispersos en control, alertas y decisiones accionables.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            ["1", "Capturar datos"],
+            ["2", "Validar y cruzar información"],
+            ["3", "Detectar problemas"],
+            ["4", "Generar acciones y reportes"],
+          ].map(([num, text]) => (
+            <div
+              key={num}
+              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-lg shadow-black/20"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-500/15 text-lg font-bold text-sky-300">
+                {num}
+              </div>
+              <div className="mt-4 text-lg font-semibold text-white">{text}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SOLUCIÓN */}
+      <section className="border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="inline-flex rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1 text-sm text-emerald-300">
+              Solución
+            </div>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Una sola plataforma para controlar toda la operación
+            </h2>
+            <p className="mt-4 text-lg text-slate-400">
+              Desde combustible y AC30 hasta producción, calidad y alertas inteligentes.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {solutionPoints.map((item) => (
+              <div
+                key={item}
+                className="rounded-3xl border border-white/10 bg-slate-900/60 p-6 text-slate-200"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="max-w-3xl">
           <h2 className="text-3xl font-bold tracking-tight">Lo que resuelve SAS SmartPlant</h2>
@@ -193,10 +322,14 @@ export default function SASSmartPlantLandingPage() {
         </div>
       </section>
 
+      {/* CÓMO FUNCIONA */}
       <section className="border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:px-8">
           <div>
             <h2 className="text-3xl font-bold tracking-tight">Cómo funciona</h2>
+            <p className="mt-3 text-slate-400">
+              Captura → analiza → detecta → alerta → decide.
+            </p>
             <div className="mt-8 space-y-4">
               {steps.map((step, index) => (
                 <div
@@ -235,12 +368,33 @@ export default function SASSmartPlantLandingPage() {
         </div>
       </section>
 
+      {/* CTA DEMO */}
+      <section className="mx-auto max-w-6xl px-6 py-20 text-center lg:px-8">
+        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          Mira el sistema en acción
+        </h2>
+        <p className="mt-4 text-lg text-slate-400">
+          Visualiza cómo SAS SmartPlant detecta pérdidas, interpreta desviaciones y ayuda a tomar decisiones en tiempo real.
+        </p>
+        <div className="mt-8">
+          <a
+            href="https://sas-smartplant-nfhbmqb39yeacmngdyan4i.streamlit.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-2xl bg-emerald-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-400"
+          >
+            Ver demo completo
+          </a>
+        </div>
+      </section>
+
+      {/* CONTACTO */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8" id="contacto">
         <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-sky-500/10 via-slate-900 to-emerald-500/10 p-8 lg:p-12">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight">
-                Solicita una presentación de SAS SmartPlant
+                Empieza a detectar pérdidas hoy
               </h2>
               <p className="mt-4 max-w-2xl text-slate-300">
                 Ideal para reuniones con aliados comerciales, clientes piloto e inversionistas interesados en tecnología aplicada a la operación industrial.
@@ -271,9 +425,14 @@ export default function SASSmartPlantLandingPage() {
                 </div>
               </div>
 
-              <button className="mt-6 w-full rounded-2xl bg-sky-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-400">
-                Agendar reunión
-              </button>
+              <a
+                href="https://wa.me/50769818827"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 block w-full rounded-2xl bg-sky-500 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-sky-400"
+              >
+                Hablar por WhatsApp
+              </a>
             </div>
           </div>
         </div>
