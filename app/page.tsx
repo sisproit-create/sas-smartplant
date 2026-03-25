@@ -188,7 +188,66 @@ export default function SASSmartPlantLandingPage() {
           </div>
         </div>
       </section>
+      {/* VIDEOS */}
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex rounded-full border border-sky-400/20 bg-sky-500/10 px-3 py-1 text-sm text-sky-300">
+            Videos
+          </div>
 
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            SAS SmartPlant en acción
+          </h2>
+
+          <p className="mt-4 text-lg text-slate-400">
+            Entiende el problema, la solución y el sistema en minutos.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+
+          {/* VIDEO 1 */}
+          <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
+            <video controls className="w-full">
+              <source src="/videos/pitch.mp4" type="video/mp4" />
+            </video>
+            <div className="p-4 text-sm text-slate-400">
+              Pitch general del sistema
+            </div>
+          </div>
+
+          {/* VIDEO 2 */}
+          <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
+            <video controls className="w-full">
+              <source src="/videos/problema.mp4" type="video/mp4" />
+            </video>
+            <div className="p-4 text-sm text-slate-400">
+              Problema: pérdidas ocultas
+            </div>
+          </div>
+
+          {/* VIDEO 3 */}
+          <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
+            <video controls className="w-full">
+              <source src="/videos/solucion.mp4" type="video/mp4" />
+            </video>
+            <div className="p-4 text-sm text-slate-400">
+              Solución: inteligencia operativa
+            </div>
+          </div>
+
+          {/* VIDEO 4 */}
+          <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
+            <video controls className="w-full">
+              <source src="/videos/demo.mp4" type="video/mp4" />
+            </video>
+            <div className="p-4 text-sm text-slate-400">
+              Demo en tiempo real
+            </div>
+          </div>
+
+        </div>
+      </section>
       {/* PROBLEMA */}
       <section className="border-b border-white/10 bg-slate-900/60">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
