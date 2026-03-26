@@ -924,11 +924,6 @@ components.html("""
 </div>
 """, height=430)
 
-st.link_button(
-    "🔍 Abrir video en pantalla completa",
-    "https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=SAS-SmartPlant_INTRO_RESUMEN_720p_dxdpjv"
-)
-
 st.divider()
 
 # =========================
