@@ -1165,10 +1165,6 @@ components.html("""
 </div>
 """, height=430)
 
-st.link_button(
-    "🔍 Abrir video de interpretación",
-    "https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=SAS-SmartPlant_como_esta_operando_la_planta._720p_jlge9h"
-)
 
 st.divider()
 st.caption("SAS SmartPlant • Demo para inversionistas")
