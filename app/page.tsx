@@ -194,95 +194,97 @@ export default function SASSmartPlantLandingPage() {
           <div className="inline-flex rounded-full border border-sky-400/20 bg-sky-500/10 px-3 py-1 text-sm text-sky-300">
             Videos
           </div>
-      
+
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             SAS SmartPlant en acción
           </h2>
-      
+
           <p className="mt-4 text-lg text-slate-400">
             Entiende el problema, la solución y el sistema en minutos.
           </p>
         </div>
-      
+
         <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-      
           {/* VIDEO 1 */}
-          <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <div className="aspect-video overflow-hidden flex items-center justify-center bg-black">
+          <div className="group rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)] overflow-hidden">
+            <div className="relative aspect-video overflow-hidden bg-black">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                controls
                 preload="metadata"
                 poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/pitch_pvthvb.jpg"
-                className="w-full h-full object-contain transition duration-500 group-hover:scale-[1.03]"
+                className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.04]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/pitch_pvthvb.mp4"
                   type="video/mp4"
                 />
               </video>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-90" />
             </div>
-            <div className="p-4 text-sm text-slate-400">
-              Pitch general del sistema
+            <div className="border-t border-white/10 bg-black/70 px-5 py-4">
+              <div className="text-sm font-medium text-slate-200">
+                Pitch general del sistema
+              </div>
             </div>
           </div>
-      
+
           {/* VIDEO 2 */}
-          <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <div className="aspect-video overflow-hidden flex items-center justify-center bg-black">
+          <div className="group rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)] overflow-hidden">
+            <div className="relative aspect-video overflow-hidden bg-black">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                controls
                 preload="metadata"
                 poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/problema_icynkd.jpg"
-                className="w-full h-full object-contain transition duration-500 group-hover:scale-[1.03]"
+                className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.04]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/problema_icynkd.mp4"
                   type="video/mp4"
                 />
               </video>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-90" />
             </div>
-            <div className="p-4 text-sm text-slate-400">
-              Problema: pérdidas ocultas
+            <div className="border-t border-white/10 bg-black/70 px-5 py-4">
+              <div className="text-sm font-medium text-slate-200">
+                Problema: pérdidas ocultas
+              </div>
             </div>
           </div>
-      
+
           {/* VIDEO 3 */}
-          <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <div className="aspect-video overflow-hidden flex items-center justify-center bg-black">
+          <div className="group rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)] overflow-hidden">
+            <div className="relative aspect-video overflow-hidden bg-black">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                controls
                 preload="metadata"
                 poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/solucion_lnyfh8.jpg"
-                className="w-full h-full object-contain transition duration-500 group-hover:scale-[1.03]"
+                className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.04]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfh8.mp4"
                   type="video/mp4"
                 />
               </video>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-90" />
             </div>
-            <div className="p-4 text-sm text-slate-400">
-              Solución: inteligencia operativa
+            <div className="border-t border-white/10 bg-black/70 px-5 py-4">
+              <div className="text-sm font-medium text-slate-200">
+                Solución: inteligencia operativa
+              </div>
             </div>
           </div>
-      
-          {/* VIDEO 4 pendiente */}
-      
         </div>
       </section>
-      
+            
       {/* PROBLEMA */}
       <section className="border-b border-white/10 bg-slate-900/60">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
