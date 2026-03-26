@@ -194,18 +194,18 @@ export default function SASSmartPlantLandingPage() {
           <div className="inline-flex rounded-full border border-sky-400/20 bg-sky-500/10 px-3 py-1 text-sm text-sky-300">
             Videos
           </div>
-
+      
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             SAS SmartPlant en acción
           </h2>
-
+      
           <p className="mt-4 text-lg text-slate-400">
             Entiende el problema, la solución y el sistema en minutos.
           </p>
         </div>
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-
+      
+        <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+      
           {/* VIDEO 1 */}
           <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
             <div className="aspect-video overflow-hidden">
@@ -215,7 +215,7 @@ export default function SASSmartPlantLandingPage() {
                 loop
                 playsInline
                 preload="metadata"
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/pitch_pvthvb.mp4"
@@ -227,7 +227,7 @@ export default function SASSmartPlantLandingPage() {
               Pitch general del sistema
             </div>
           </div>
-          
+      
           {/* VIDEO 2 */}
           <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
             <div className="aspect-video overflow-hidden">
@@ -237,7 +237,7 @@ export default function SASSmartPlantLandingPage() {
                 loop
                 playsInline
                 preload="metadata"
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/problema_icynkd.mp4"
@@ -249,7 +249,7 @@ export default function SASSmartPlantLandingPage() {
               Problema: pérdidas ocultas
             </div>
           </div>
-          
+      
           {/* VIDEO 3 */}
           <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
             <div className="aspect-video overflow-hidden">
@@ -259,7 +259,7 @@ export default function SASSmartPlantLandingPage() {
                 loop
                 playsInline
                 preload="metadata"
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfh8.mp4"
@@ -271,10 +271,10 @@ export default function SASSmartPlantLandingPage() {
               Solución: inteligencia operativa
             </div>
           </div>
-          
+      
           {/* VIDEO 4 pendiente */}
-         
-
+          {/* Aquí puedes añadirlo luego */}
+      
         </div>
       </section>
       {/* PROBLEMA */}
