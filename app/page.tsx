@@ -236,7 +236,7 @@ export default function SASSmartPlantLandingPage() {
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
               <source
-                src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfb8.mp4"
+                src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfh8.mp4"
                 type="video/mp4"
               />
             </video>
