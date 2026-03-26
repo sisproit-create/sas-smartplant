@@ -904,6 +904,7 @@ components.html("""
     muted
     loop
     playsinline
+    controls
     preload="metadata"
     poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/SAS-SmartPlant_INTRO_RESUMEN_720p_dxdpjv.jpg"
     style="
@@ -922,6 +923,11 @@ components.html("""
   </video>
 </div>
 """, height=430)
+
+st.link_button(
+    "🔍 Abrir video en pantalla completa",
+    "https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=SAS-SmartPlant_INTRO_RESUMEN_720p_dxdpjv"
+)
 
 st.divider()
 
@@ -1144,6 +1150,7 @@ components.html("""
     muted
     loop
     playsinline
+    controls
     preload="metadata"
     poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/SAS-SmartPlant_como_esta_operando_la_planta._720p_jlge9h.jpg"
     style="
@@ -1163,8 +1170,10 @@ components.html("""
 </div>
 """, height=430)
 
-st.divider()
-st.caption("SAS SmartPlant • Demo para inversionistas")
+st.link_button(
+    "🔍 Abrir video de interpretación",
+    "https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=SAS-SmartPlant_como_esta_operando_la_planta._720p_jlge9h"
+)
 
 st.divider()
 st.caption("SAS SmartPlant • Demo para inversionistas")
