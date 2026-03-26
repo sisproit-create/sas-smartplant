@@ -208,14 +208,16 @@ export default function SASSmartPlantLandingPage() {
       
           {/* VIDEO 1 */}
           <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <div className="aspect-video overflow-hidden">
+            <div className="aspect-video overflow-hidden flex items-center justify-center bg-black">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
+                controls
                 preload="metadata"
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/pitch_pvthvb.jpg"
+                className="w-full h-full object-contain transition duration-500 group-hover:scale-[1.03]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/pitch_pvthvb.mp4"
@@ -230,14 +232,16 @@ export default function SASSmartPlantLandingPage() {
       
           {/* VIDEO 2 */}
           <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <div className="aspect-video overflow-hidden">
+            <div className="aspect-video overflow-hidden flex items-center justify-center bg-black">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
+                controls
                 preload="metadata"
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/problema_icynkd.jpg"
+                className="w-full h-full object-contain transition duration-500 group-hover:scale-[1.03]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/problema_icynkd.mp4"
@@ -252,14 +256,16 @@ export default function SASSmartPlantLandingPage() {
       
           {/* VIDEO 3 */}
           <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <div className="aspect-video overflow-hidden">
+            <div className="aspect-video overflow-hidden flex items-center justify-center bg-black">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
+                controls
                 preload="metadata"
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/solucion_lnyfh8.jpg"
+                className="w-full h-full object-contain transition duration-500 group-hover:scale-[1.03]"
               >
                 <source
                   src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfh8.mp4"
@@ -273,10 +279,10 @@ export default function SASSmartPlantLandingPage() {
           </div>
       
           {/* VIDEO 4 pendiente */}
-          {/* Aquí puedes añadirlo luego */}
       
         </div>
       </section>
+      
       {/* PROBLEMA */}
       <section className="border-b border-white/10 bg-slate-900/60">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
