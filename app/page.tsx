@@ -209,37 +209,49 @@ export default function SASSmartPlantLandingPage() {
           {/* VIDEO 1 */}
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
-              <source src="https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=pitch_pvthvb" />
+              <source
+                src="https://res.cloudinary.com/dzkcqhndy/video/upload/pitch_pvthvb.mp4"
+                type="video/mp4"
+              />
             </video>
             <div className="p-4 text-sm text-slate-400">
               Pitch general del sistema
             </div>
           </div>
-
+          
           {/* VIDEO 2 */}
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
-              <source src="https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=problema_icynkd" />
+              <source
+                src="https://res.cloudinary.com/dzkcqhndy/video/upload/problema_icynkd.mp4"
+                type="video/mp4"
+              />
             </video>
             <div className="p-4 text-sm text-slate-400">
               Problema: pérdidas ocultas
             </div>
           </div>
-
+          
           {/* VIDEO 3 */}
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
-              <source src="https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=solucion_lnyfh8" />
+              <source
+                src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfb8.mp4"
+                type="video/mp4"
+              />
             </video>
             <div className="p-4 text-sm text-slate-400">
               Solución: inteligencia operativa
             </div>
           </div>
-
+          
           {/* VIDEO 4 */}
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
-              <source src="/videos/demo.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/dzkcqhndy/video/upload/demo.mp4"
+                type="video/mp4"
+              />
             </video>
             <div className="p-4 text-sm text-slate-400">
               Demo en tiempo real
