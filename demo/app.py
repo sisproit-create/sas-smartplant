@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="SAS SmartPlant Demo",
@@ -885,6 +886,44 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# =========================
+# VIDEO INTRO
+# =========================
+st.markdown("### 🎬 Introducción al sistema")
+
+components.html("""
+<div style="
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(148,163,184,0.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.38);
+">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/SAS-SmartPlant_INTRO_RESUMEN_720p_dxdpjv.jpg"
+    style="
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center 12%;
+      display: block;
+      background: #000;
+    "
+  >
+    <source
+      src="https://res.cloudinary.com/dzkcqhndy/video/upload/q_auto,f_auto/SAS-SmartPlant_INTRO_RESUMEN_720p_dxdpjv.mp4"
+      type="video/mp4"
+    >
+  </video>
+</div>
+""", height=430)
+
+st.divider()
 
 # =========================
 # KPI TOP
@@ -1086,5 +1125,47 @@ with tab6:
     st.write("4. Separar análisis por mezcla IV-B y MS-22 para evitar conclusiones mezcladas.")
     st.write("5. Priorizar días de alta producción para evaluar desempeño real de la operación.")
 
+# =========================
+# VIDEO INTERPRETACIÓN FINAL
+# =========================
+st.divider()
+st.markdown("### 📊 Cómo interpretar la operación de la planta")
+
+components.html("""
+<div style="
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(148,163,184,0.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.38);
+">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/SAS-SmartPlant_como_esta_operando_la_planta._720p_jlge9h.jpg"
+    style="
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center 12%;
+      display: block;
+      background: #000;
+    "
+  >
+    <source
+      src="https://res.cloudinary.com/dzkcqhndy/video/upload/q_auto,f_auto/SAS-SmartPlant_como_esta_operando_la_planta._720p_jlge9h.mp4"
+      type="video/mp4"
+    >
+  </video>
+</div>
+""", height=430)
+
 st.divider()
 st.caption("SAS SmartPlant • Demo para inversionistas")
+
+st.divider()
+st.caption("SAS SmartPlant • Demo para inversionistas")
+
