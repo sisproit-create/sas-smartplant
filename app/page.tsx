@@ -207,56 +207,73 @@ export default function SASSmartPlantLandingPage() {
         <div className="mt-12 grid gap-8 md:grid-cols-2">
 
           {/* VIDEO 1 */}
-          <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <video controls className="w-full">
-              <source
-                src="https://res.cloudinary.com/dzkcqhndy/video/upload/pitch_pvthvb.mp4"
-                type="video/mp4"
-              />
-            </video>
+          <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
+            <div className="aspect-video overflow-hidden">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              >
+                <source
+                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/pitch_pvthvb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
             <div className="p-4 text-sm text-slate-400">
               Pitch general del sistema
             </div>
           </div>
           
           {/* VIDEO 2 */}
-          <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <video controls className="w-full">
-              <source
-                src="https://res.cloudinary.com/dzkcqhndy/video/upload/problema_icynkd.mp4"
-                type="video/mp4"
-              />
-            </video>
+          <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
+            <div className="aspect-video overflow-hidden">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              >
+                <source
+                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/problema_icynkd.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
             <div className="p-4 text-sm text-slate-400">
               Problema: pérdidas ocultas
             </div>
           </div>
           
           {/* VIDEO 3 */}
-          <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <video controls className="w-full">
-              <source
-                src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfh8.mp4"
-                type="video/mp4"
-              />
-            </video>
+          <div className="group rounded-3xl border border-white/10 bg-black overflow-hidden">
+            <div className="aspect-video overflow-hidden">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              >
+                <source
+                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfh8.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
             <div className="p-4 text-sm text-slate-400">
               Solución: inteligencia operativa
             </div>
           </div>
           
           {/* VIDEO 4 pendiente */}
-          <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
-            <video controls className="w-full">
-              <source
-                src="https://res.cloudinary.com/dzkcqhndy/video/upload/demo.mp4"
-                type="video/mp4"
-              />
-            </video>
-            <div className="p-4 text-sm text-slate-400">
-              Demo en tiempo real
-            </div>
-          </div>
+         
 
         </div>
       </section>
