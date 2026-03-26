@@ -205,6 +205,7 @@ export default function SASSmartPlantLandingPage() {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
           {/* VIDEO 1 */}
           <div className="group rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)] overflow-hidden">
             <div className="relative aspect-video overflow-hidden bg-black">
@@ -213,17 +214,21 @@ export default function SASSmartPlantLandingPage() {
                 muted
                 loop
                 playsInline
+                controls
                 preload="metadata"
                 poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/pitch_pvthvb.jpg"
-                className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.04]"
+                className="h-full w-full object-cover object-[center_10%] transition duration-700 ease-out group-hover:scale-[1.05]"
               >
                 <source
-                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/pitch_pvthvb.mp4"
+                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/q_auto,f_auto/pitch_pvthvb.mp4"
                   type="video/mp4"
                 />
               </video>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-90" />
+
+              {/* overlay sutil */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
+
             <div className="border-t border-white/10 bg-black/70 px-5 py-4">
               <div className="text-sm font-medium text-slate-200">
                 Pitch general del sistema
@@ -239,17 +244,20 @@ export default function SASSmartPlantLandingPage() {
                 muted
                 loop
                 playsInline
+                controls
                 preload="metadata"
                 poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/problema_icynkd.jpg"
-                className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.04]"
+                className="h-full w-full object-cover object-[center_10%] transition duration-700 ease-out group-hover:scale-[1.05]"
               >
                 <source
-                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/problema_icynkd.mp4"
+                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/q_auto,f_auto/problema_icynkd.mp4"
                   type="video/mp4"
                 />
               </video>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-90" />
+
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
+
             <div className="border-t border-white/10 bg-black/70 px-5 py-4">
               <div className="text-sm font-medium text-slate-200">
                 Problema: pérdidas ocultas
@@ -265,23 +273,27 @@ export default function SASSmartPlantLandingPage() {
                 muted
                 loop
                 playsInline
+                controls
                 preload="metadata"
                 poster="https://res.cloudinary.com/dzkcqhndy/video/upload/so_0/solucion_lnyfh8.jpg"
-                className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.04]"
+                className="h-full w-full object-cover object-[center_10%] transition duration-700 ease-out group-hover:scale-[1.05]"
               >
                 <source
-                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/solucion_lnyfh8.mp4"
+                  src="https://res.cloudinary.com/dzkcqhndy/video/upload/q_auto,f_auto/solucion_lnyfh8.mp4"
                   type="video/mp4"
                 />
               </video>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-90" />
+
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
+
             <div className="border-t border-white/10 bg-black/70 px-5 py-4">
               <div className="text-sm font-medium text-slate-200">
                 Solución: inteligencia operativa
               </div>
             </div>
           </div>
+
         </div>
       </section>
             
