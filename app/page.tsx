@@ -245,7 +245,7 @@ export default function SASSmartPlantLandingPage() {
             </div>
           </div>
           
-          {/* VIDEO 4 */}
+          {/* VIDEO 4 pendiente */}
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
               <source
