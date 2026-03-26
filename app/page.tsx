@@ -209,7 +209,7 @@ export default function SASSmartPlantLandingPage() {
           {/* VIDEO 1 */}
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
-              <source src="/videos/pitch.mp4" type="video/mp4" />
+              <source src="https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=pitch_pvthvb" />
             </video>
             <div className="p-4 text-sm text-slate-400">
               Pitch general del sistema
@@ -219,7 +219,7 @@ export default function SASSmartPlantLandingPage() {
           {/* VIDEO 2 */}
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
-              <source src="/videos/problema.mp4" type="video/mp4" />
+              <source src="https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=problema_icynkd" />
             </video>
             <div className="p-4 text-sm text-slate-400">
               Problema: pérdidas ocultas
@@ -229,7 +229,7 @@ export default function SASSmartPlantLandingPage() {
           {/* VIDEO 3 */}
           <div className="rounded-3xl border border-white/10 bg-black overflow-hidden">
             <video controls className="w-full">
-              <source src="/videos/solucion.mp4" type="video/mp4" />
+              <source src="https://player.cloudinary.com/embed/?cloud_name=dzkcqhndy&public_id=solucion_lnyfh8" />
             </video>
             <div className="p-4 text-sm text-slate-400">
               Solución: inteligencia operativa
