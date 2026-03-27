@@ -19,9 +19,9 @@ export default function SASSmartPlantLandingPage() {
   ];
 
   const metrics = [
-    { label: "Producción demo", value: "1,734 ton" },
-    { label: "Diésel demo", value: "4,700 gal" },
-    { label: "AC30 demo", value: "52,000 kg" },
+    { label: "Producción analizada", value: "1,734 ton" },
+    { label: "Combustible Diésel usado", value: "4,700 gal" },
+    { label: "Asfalto (AC30) usado", value: "52,000 kg" },
     { label: "Alertas activas", value: "3" },
   ];
 
@@ -111,7 +111,7 @@ export default function SASSmartPlantLandingPage() {
                 <div className="mb-5 flex items-center justify-between">
                   <div>
                     <div className="text-sm text-slate-400">Dashboard operativo</div>
-                    <div className="text-xl font-semibold">Resumen del día</div>
+                    <div className="text-xl font-semibold">Resumen operativo</div>
                   </div>
                   <div className="rounded-full bg-emerald-500/15 px-3 py-1 text-sm text-emerald-300">
                     Activo
@@ -120,25 +120,25 @@ export default function SASSmartPlantLandingPage() {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="rounded-2xl bg-slate-900 p-4">
-                    <div className="text-sm text-slate-400">Producción</div>
+                    <div className="text-sm text-slate-400">Producción analizada</div>
                     <div className="mt-1 text-2xl font-bold">1,734 ton</div>
-                    <div className="mt-2 text-sm text-emerald-300">+9.1%</div>
+                    <div className="mt-2 text-sm text-emerald-300">Período analizado</div>
                   </div>
 
                   <div className="rounded-2xl bg-slate-900 p-4">
-                    <div className="text-sm text-slate-400">Diésel</div>
+                    <div className="text-sm text-slate-400">Combustible Diésel usado</div>
                     <div className="mt-1 text-2xl font-bold">4,700 gal</div>
-                    <div className="mt-2 text-sm text-rose-300">+14.8%</div>
+                    <div className="mt-2 text-sm text-rose-300">Consumo registrado</div>
                   </div>
 
                   <div className="rounded-2xl bg-slate-900 p-4">
-                    <div className="text-sm text-slate-400">AC30</div>
+                    <div className="text-sm text-slate-400">Asfalto (AC30) usado</div>
                     <div className="mt-1 text-2xl font-bold">52,000 kg</div>
-                    <div className="mt-2 text-sm text-amber-300">-500 kg</div>
+                    <div className="mt-2 text-sm text-amber-300">Desviación vs diseño</div>
                   </div>
 
                   <div className="rounded-2xl bg-slate-900 p-4">
-                    <div className="text-sm text-slate-400">Alertas</div>
+                    <div className="text-sm text-slate-400">Alertas activas</div>
                     <div className="mt-1 text-2xl font-bold">3</div>
                     <div className="mt-2 text-sm text-rose-300">Alta prioridad</div>
                   </div>
@@ -153,7 +153,7 @@ export default function SASSmartPlantLandingPage() {
 
                 <div className="mt-4 grid gap-3 lg:grid-cols-2">
                   <div className="rounded-2xl bg-slate-900 p-4">
-                    <div className="text-sm text-slate-400">Flujo de diésel</div>
+                    <div className="text-sm text-slate-400">Flujo de Combustible Diésel</div>
                     <div className="mt-3 space-y-3">
                       {[
                         ["Recepción P2", "10,000 gal", "100%"],
@@ -188,6 +188,7 @@ export default function SASSmartPlantLandingPage() {
           </div>
         </div>
       </section>
+
       {/* VIDEOS */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
@@ -205,9 +206,8 @@ export default function SASSmartPlantLandingPage() {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
           {/* VIDEO 1 */}
-          <div className="group rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)] overflow-hidden">
+          <div className="group overflow-hidden rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
             <div className="relative aspect-video overflow-hidden bg-black">
               <video
                 autoPlay
@@ -225,7 +225,6 @@ export default function SASSmartPlantLandingPage() {
                 />
               </video>
 
-              {/* overlay sutil */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
 
@@ -237,7 +236,7 @@ export default function SASSmartPlantLandingPage() {
           </div>
 
           {/* VIDEO 2 */}
-          <div className="group rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)] overflow-hidden">
+          <div className="group overflow-hidden rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
             <div className="relative aspect-video overflow-hidden bg-black">
               <video
                 autoPlay
@@ -266,7 +265,7 @@ export default function SASSmartPlantLandingPage() {
           </div>
 
           {/* VIDEO 3 */}
-          <div className="group rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)] overflow-hidden">
+          <div className="group overflow-hidden rounded-[28px] border border-white/10 bg-black/60 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
             <div className="relative aspect-video overflow-hidden bg-black">
               <video
                 autoPlay
@@ -293,10 +292,9 @@ export default function SASSmartPlantLandingPage() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
-            
+
       {/* PROBLEMA */}
       <section className="border-b border-white/10 bg-slate-900/60">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
@@ -404,6 +402,221 @@ export default function SASSmartPlantLandingPage() {
                 {item}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CASO REAL */}
+      <section className="w-full border-t border-white/10 bg-slate-950 px-6 py-20 md:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 max-w-3xl">
+            <div className="mb-5 inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-sm text-cyan-300">
+              Caso real en operación
+            </div>
+
+            <h2 className="text-3xl font-bold leading-tight tracking-tight text-white md:text-5xl">
+              Validado en operación real,
+              <span className="text-cyan-400"> no en teoría</span>
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              Implementado en una planta de asfalto en Panamá, SAS SmartPlant permitió
+              detectar diferencias operativas, mejorar el control del flujo de diésel y
+              aumentar la visibilidad de la operación en tiempo real.
+            </p>
+          </div>
+
+          <div className="mb-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <div className="rounded-2xl border border-red-500/20 bg-white/5 p-8 backdrop-blur-sm">
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-500/15 text-xl text-red-400">
+                  ⚠️
+                </div>
+                <h3 className="text-2xl font-semibold text-white">Problema real</h3>
+              </div>
+
+              <p className="mb-5 leading-7 text-slate-300">
+                Antes de SAS SmartPlant, la planta operaba con controles manuales y
+                reportes tardíos, lo que dificultaba la toma de decisiones en tiempo real.
+              </p>
+
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex gap-3">
+                  <span className="text-red-400">•</span>
+                  <span>Diferencias de diésel no detectadas a tiempo</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-red-400">•</span>
+                  <span>Desbalance en consumo de asfalto (AC30)</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-red-400">•</span>
+                  <span>Falta de trazabilidad operativa inmediata</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-red-400">•</span>
+                  <span>Dependencia de análisis manual</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-cyan-500/20 bg-white/5 p-8 backdrop-blur-sm">
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/15 text-xl text-cyan-400">
+                  ⚙️
+                </div>
+                <h3 className="text-2xl font-semibold text-white">Solución aplicada</h3>
+              </div>
+
+              <p className="mb-5 leading-7 text-slate-300">
+                Implementamos SAS SmartPlant como sistema de control inteligente para
+                capturar, validar y analizar la operación en tiempo real.
+              </p>
+
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex gap-3">
+                  <span className="text-cyan-400">•</span>
+                  <span>Captura de datos en tiempo real</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cyan-400">•</span>
+                  <span>Validación automática de flujos</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cyan-400">•</span>
+                  <span>Detección automática de desviaciones</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cyan-400">•</span>
+                  <span>Dashboard operativo para toma de decisiones</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mb-10 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-xl text-emerald-400">
+                📊
+              </div>
+              <h3 className="text-2xl font-semibold text-white">Resultados observados</h3>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 text-slate-200 md:grid-cols-2">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                Identificación de diferencias operativas previamente invisibles
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                Mejora en el control del flujo de diésel
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                Validación de consistencia operativa
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                Reducción del tiempo de análisis
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <div className="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-8">
+              <h3 className="mb-5 text-2xl font-semibold text-white">
+                Ejemplo real detectado por el sistema
+              </h3>
+
+              <div className="space-y-4 leading-7 text-slate-300">
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <span className="font-medium text-amber-300">Producción baja</span>
+                  <p className="mt-2">
+                    El sistema puede identificar días con producción atípica que distorsionan
+                    los indicadores por tonelada y requieren revisión operativa.
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <span className="font-medium text-amber-300">Desviaciones de consumo</span>
+                  <p className="mt-2">
+                    Detecta sobreconsumo de diésel y desviaciones del contenido de asfalto
+                    (AC30) frente al diseño esperado.
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <span className="font-medium text-amber-300">Impacto directo en costo</span>
+                  <p className="mt-2">
+                    Convierte variaciones operativas en información accionable para reducir
+                    pérdidas ocultas y mejorar decisiones.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-between rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-8">
+              <div>
+                <h3 className="mb-5 text-2xl font-semibold text-white">
+                  Impacto del caso real
+                </h3>
+
+                <p className="mb-6 leading-8 text-slate-300">
+                  La operación pasó de un modelo reactivo a un modelo proactivo, con
+                  mayor control, trazabilidad y capacidad de decisión en tiempo real.
+                </p>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                    <div className="mb-1 text-sm text-cyan-300">Control</div>
+                    <div className="font-semibold text-white">Mayor visibilidad operativa</div>
+                  </div>
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                    <div className="mb-1 text-sm text-cyan-300">Trazabilidad</div>
+                    <div className="font-semibold text-white">Validación inmediata</div>
+                  </div>
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                    <div className="mb-1 text-sm text-cyan-300">Eficiencia</div>
+                    <div className="font-semibold text-white">Menos tiempo de análisis</div>
+                  </div>
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                    <div className="mb-1 text-sm text-cyan-300">Decisión</div>
+                    <div className="font-semibold text-white">Operación más proactiva</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 rounded-2xl border border-cyan-400/20 bg-slate-900/70 p-6">
+                <p className="text-xl font-semibold leading-relaxed text-white md:text-2xl">
+                  “SAS SmartPlant no es un concepto. Es un sistema validado en operación real
+                  que detecta pérdidas que antes no eran visibles.”
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center md:p-10">
+            <h3 className="mb-4 text-2xl font-bold text-white md:text-3xl">
+              De la teoría a la operación real
+            </h3>
+            <p className="mx-auto mb-8 max-w-3xl text-lg leading-8 text-slate-300">
+              Descubre cómo SAS SmartPlant convierte datos operativos en alertas,
+              control y decisiones en tiempo real.
+            </p>
+
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href="https://sas-smartplant-nfhbmqb39yeacmngdyan4i.streamlit.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-white transition hover:bg-cyan-400"
+              >
+                Ver demo real
+              </a>
+
+              <a
+                href="#contacto"
+                className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+              >
+                Solicitar presentación
+              </a>
+            </div>
           </div>
         </div>
       </section>
